@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAME GENERATOR</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🦄</text></svg>">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+</head>
+<body>
+    <div id="creoNameGenerator">
+        <h2>NAME GENERATOR</h2>
+
+        <div class="input-group">
+            <label for="verticalFieldSelect">Выберите вертикаль:</label>
+            <select id="verticalFieldSelect" class="verticalFieldSelect" required>
+                <option value="">Выберите вертикаль</option>
+            </select>
+        </div>
+        <div class="input-group">
+            <label for="verticalManualInput">Или введите свою вертикаль:</label>
+            <input type="text" id="verticalManualInput" class="verticalManualInput" placeholder="Введите вертикаль вручную (необязательно)">
+        </div>
+
+        <div class="input-group">
+            <label for="languageField">Язык:</label>
+            <select id="languageField" class="languageField" required>
+                <option value="">Выберите язык</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label for="authorField">Автор:</label>
+            <input type="text" id="authorField" class="authorField" placeholder="Введите имя автора" required>
+        </div>
+
+        <div class="input-group">
+            <label for="authorTypeField">Тип автора:</label>
+            <select id="authorTypeField" class="authorTypeField" required>
+                <option value="">Выберите тип автора</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label for="trafficSourceField">Источник трафика:</label>
+            <select id="trafficSourceField" class="trafficSourceField" required>
+                <option value="">Выберите источник трафика</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label for="clickupTaskIdField">ClickUp ID:</label>
+            <input type="text" id="clickupTaskIdField" class="clickupTaskIdField" placeholder="Введите ID задачи">
+        </div>
+
+        <div class="input-group">
+            <label for="parentUniqIdField">Parent ClickUp ID (только для обновлений):</label>
+            <input type="text" id="parentUniqIdField" class="parentUniqIdField" placeholder="Введите Parent Uniq ID">
+        </div>
+
+        <div class="input-group">
+            <label for="creoTypeField">Тип креатива:</label>
+            <select id="creoTypeField" class="creoTypeField" required>
+                <option value="">Выберите тип CREO</option>
+            </select>
+        </div>
+
+        <button onclick="generateCreoName()">Сгенерировать</button>
+        <h3>Результат:</h3>
+        <div id="creoNamesOutput" class="result-container"></div>
+    </div>
+    <div id="site-counter" style="position:fixed;right:20px;bottom:20px;z-index:9999;">
+        <div id="sfcanh35knyh5813guaw25uhnb3pfn2zd5a"></div>
+        <script type="text/javascript" src="https://counter4.optistats.ovh/private/counter.js?c=anh35knyh5813guaw25uhnb3pfn2zd5a&down=async" async></script>
+        <noscript><a href="https://www.freecounterstat.com" title="free hit counter"><img src="https://counter4.optistats.ovh/private/freecounterstat.php?c=anh35knyh5813guaw25uhnb3pfn2zd5a" border="0" title="free hit counter" alt="free hit counter"></a></noscript>
+    </div>
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+    <footer style="text-align:center; margin-top:30px; color:#b3b3b3; font-size:15px; font-weight:bold; letter-spacing:0.5px;">
+        Developed with <span style='color:#e25555;font-size:1.1em;'>❤️</span> by 
+        <a href="https://www.linkedin.com/in/volodymyr-husliev-755473267/" target="_blank" style="color:#4a90e2; text-decoration:none; font-weight:bold;">Volodymyr Husliev</a>
+    </footer>
+</body>
+</html> 
