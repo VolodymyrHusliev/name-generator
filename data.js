@@ -6760,7 +6760,8 @@ const trafficSourceOptions = [
     { value: 'FB', text: 'Facebook' },
     { value: 'TB', text: 'Taboola' },
     { value: 'MGID', text: 'Mgid' },
-    { value: 'OB', text: 'OutBrain' }
+    { value: 'OB', text: 'OutBrain' },
+    { value: 'NB', text: 'Newsbreak' }
 ];
 
 // Опции для типов CREO
@@ -6769,5 +6770,8 @@ const creoTypeOptions = [
     { value: 'T', text: 'Translate' },
     { value: 'R', text: 'Refresh' },
     { value: 'A', text: 'Adaptation' },
-    { value: 'H', text: 'Hard' }
+    { value: 'H', text: 'Hard' },
+    { value: 'NRC', text: 'Newsbreak Recraft' },
+    { value: 'NRF', text: 'Newsbreak Refresh' },
+    { value: 'NC', text: 'Newsbreak Change' }
 ]; 
