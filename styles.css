@@ -568,4 +568,41 @@ select::-ms-expand {
 .verticalManualInput {
     width: 100%;
     box-sizing: border-box;
+}
+
+.radio-group {
+    margin-bottom: 20px;
+}
+
+.radio-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    color: var(--text-primary);
+    padding: 5px 10px;
+    border-radius: 4px;
+    background-color: var(--bg-tertiary);
+    transition: background-color 0.3s ease;
+}
+
+.radio-label:hover {
+    background-color: var(--hover-color);
+}
+
+.radio-label input[type="radio"] {
+    margin: 0;
+    cursor: pointer;
+    accent-color: var(--accent-color);
+}
+
+.radio-label input[type="radio"]:checked + span {
+    color: var(--accent-color);
 } 

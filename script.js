@@ -93,6 +93,7 @@ function generateCreoName() {
         const clickupTaskId = $('#clickupTaskIdField').val();
         const parentUniqId = $('#parentUniqIdField').val();
         const creoType = $('#creoTypeField').val();
+        const creoCount = parseInt($('input[name="creoCount"]:checked').val());
 
         // Проверяем обязательные поля
         if (!vertical || !language || !author || !authorType || !trafficSource || !creoType) {
@@ -114,8 +115,8 @@ function generateCreoName() {
         const resultContainer = $('#creoNamesOutput');
         resultContainer.empty();
 
-        // Генерируем 6 уникальных имен
-        for (let i = 1; i <= 6; i++) {
+        // Генерируем указанное количество уникальных имен
+        for (let i = 1; i <= creoCount; i++) {
             // Генерируем уникальный ID (8 символов, строчные буквы)
             const uniqueId = Math.random().toString(36).substring(2, 10).toLowerCase();
 
@@ -144,16 +145,12 @@ function generateCreoName() {
             // Создаем контейнер для результата
             const resultItem = $('<div>').addClass('result-item');
 
-            // Создаем блок для текста результата
-            const resultText = $('<div>')
-                .addClass('result-text')
-                .text(creoName)
-                .hide();
-
             // Создаем блок для результата
             const resultBox = $('<div>')
                 .addClass('result-box')
-                .attr('data-number', `Креатив ${i}`);
+                .attr('data-number', `Креатив ${i}`)
+                .text(creoName)
+                .hide();
 
             // Создаем кнопку копирования
             const copyButton = $('<button>')
@@ -168,17 +165,15 @@ function generateCreoName() {
                     });
                 });
 
-            // Вставляем элементы в правильном порядке
-            resultBox.append(resultText);
+            // Вставляем кнопку внутрь блока результата
             resultBox.append(copyButton);
             resultItem.append(resultBox);
             resultContainer.append(resultItem);
 
             // Показываем результат с анимацией
-            resultText.fadeIn(500);
+            resultBox.fadeIn(500);
         }
 
-        
     } catch (error) {
         console.error('Ошибка при генерации имени CREO:', error);
         alert('Произошла ошибка при генерации имени CREO. Пожалуйста, попробуйте снова.');
