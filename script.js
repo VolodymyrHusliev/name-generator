@@ -144,12 +144,16 @@ function generateCreoName() {
             // Создаем контейнер для результата
             const resultItem = $('<div>').addClass('result-item');
 
+            // Создаем блок для текста результата
+            const resultText = $('<div>')
+                .addClass('result-text')
+                .text(creoName)
+                .hide();
+
             // Создаем блок для результата
             const resultBox = $('<div>')
                 .addClass('result-box')
-                .attr('data-number', `Креатив ${i}`)
-                .text(creoName)
-                .hide();
+                .attr('data-number', `Креатив ${i}`);
 
             // Создаем кнопку копирования
             const copyButton = $('<button>')
@@ -157,23 +161,27 @@ function generateCreoName() {
                 .html('📋')
                 .on('click', function(e) {
                     e.stopPropagation();
-                    const text = $(this).parent('.result-box').text();
+                    const text = $(this).parent('.result-box').text().replace('📋', '').trim();
                     if (text) {
                         navigator.clipboard.writeText(text).then(() => {
                             $(this).addClass('copied');
+                            setTimeout(() => {
+                                $(this).removeClass('copied');
+                            }, 1000);
                         }).catch(err => {
                             console.error('Ошибка при копировании: ', err);
                         });
                     }
                 });
 
-            // Вставляем кнопку внутрь блока результата
+            // Вставляем элементы в правильном порядке
+            resultBox.append(resultText);
             resultBox.append(copyButton);
             resultItem.append(resultBox);
             resultContainer.append(resultItem);
 
             // Показываем результат с анимацией
-            resultBox.fadeIn(500);
+            resultText.fadeIn(500);
         }
 
     } catch (error) {
