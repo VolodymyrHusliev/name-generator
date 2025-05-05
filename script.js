@@ -163,9 +163,6 @@ function generateCreoName() {
                     e.stopPropagation();
                     navigator.clipboard.writeText(creoName).then(() => {
                         $(this).addClass('copied');
-                        setTimeout(() => {
-                            $(this).removeClass('copied');
-                        }, 1000);
                     }).catch(err => {
                         console.error('Ошибка при копировании: ', err);
                     });
