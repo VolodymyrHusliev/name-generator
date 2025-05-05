@@ -178,6 +178,7 @@ function generateCreoName() {
             resultText.fadeIn(500);
         }
 
+        
     } catch (error) {
         console.error('Ошибка при генерации имени CREO:', error);
         alert('Произошла ошибка при генерации имени CREO. Пожалуйста, попробуйте снова.');
