@@ -161,17 +161,14 @@ function generateCreoName() {
                 .html('📋')
                 .on('click', function(e) {
                     e.stopPropagation();
-                    const text = $(this).parent('.result-box').text().replace('📋', '').trim();
-                    if (text) {
-                        navigator.clipboard.writeText(text).then(() => {
-                            $(this).addClass('copied');
-                            setTimeout(() => {
-                                $(this).removeClass('copied');
-                            }, 1000);
-                        }).catch(err => {
-                            console.error('Ошибка при копировании: ', err);
-                        });
-                    }
+                    navigator.clipboard.writeText(creoName).then(() => {
+                        $(this).addClass('copied');
+                        setTimeout(() => {
+                            $(this).removeClass('copied');
+                        }, 1000);
+                    }).catch(err => {
+                        console.error('Ошибка при копировании: ', err);
+                    });
                 });
 
             // Вставляем элементы в правильном порядке
