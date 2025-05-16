@@ -6557,7 +6557,8 @@ const verticalOptions = [
     'Unclaimed Baggage',
     'Vacation Homes & Holiday Rental',
     'Vacation',
-    'Weight Loss Resorts'
+    'Weight Loss Resorts',
+    'Container Garage'
 ];
 
 // Опции для языков
@@ -6745,7 +6746,8 @@ const languageOptions = [
     { value: 'YO', text: 'Yoruba' },
     { value: 'ZA', text: 'Zhuang; Chuang' },
     { value: 'ZH', text: 'Chinese' },
-    { value: 'ZU', text: 'Zulu' }
+    { value: 'ZU', text: 'Zulu' },
+    { value: 'PH', text: 'Philippines' },
 ];
 
 // Опции для типов авторов
